@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "accent-game"
+version = "0.1.0"
+description = "Interactive accent classification game with voice recording and ML inference"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "accent_game", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+speechbrain = "^1.0.0"
+torch = "^2.1.0"
+torchaudio = "^2.1.0"
+transformers = "^4.35.0"
+datasets = "^2.14.0"
+streamlit = "^1.28.0"
+sounddevice = "^0.4.6"
+numpy = "^1.24.0"
+scipy = "^1.11.0"
+matplotlib = "^3.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-mock = "^3.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
